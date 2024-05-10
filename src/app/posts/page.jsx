@@ -12,9 +12,9 @@ export default async function PostListPage({ searchParams }) {
   return (
     <div>
       <h1>G A M E S</h1>
-      {/* <nav className="category-button">
+      <nav className="category-button">
         <Link href="/posts/categories">C A T E G O R I E S</Link>
-      </nav> */}
+      </nav>
 
       <Link className="ascending" href="/posts?sort=asc">
         Sort Ascending
@@ -28,8 +28,7 @@ export default async function PostListPage({ searchParams }) {
           <li key={game.id} className="game-item">
             <span className="game-title">{game.title}</span>
             <span className="game-content">{game.content}</span>
-            {/* <span className="game-category">{categories.name}</span> */}
-          </li> // why do these have backticks and $ on the demo?
+                      </li> 
         ))}
       </ul>
     </div>
