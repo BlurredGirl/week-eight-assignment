@@ -2,7 +2,6 @@ import Link from "next/link";
 import { sql } from "@vercel/postgres";
 
 export default async function PostListPage({ searchParams }) {
-  // const response?
   const games = await sql`SELECT * FROM games`;
 
   if (searchParams.sort === "desc") {
