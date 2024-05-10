@@ -157,3 +157,45 @@ img {
   border: 1px solid #e049c2; 
   font-style: italic;
 }
+
+.add-comment-container {
+  background-color: #f2f2f2; 
+  border-radius: 8px; 
+  padding: 20px;
+  max-width: 600px; 
+  margin: auto; 
+}
+
+.add-comment-container h2 {
+  color: #333;
+  text-align: center; 
+}
+
+.add-comment-container form {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+}
+
+.add-comment-container label {
+  font-size: 14px;
+}
+
+.add-comment-container input {
+  padding: 20px;
+  border: 1px solid #651561; 
+  border-radius: 9px; 
+}
+
+.add-comment-container button {
+  background-color: #9e56b1; 
+  color: white; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+}
+
+.add-comment-container button:hover {
+  background-color: #ff00a6;
+}
