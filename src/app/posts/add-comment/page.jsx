@@ -24,8 +24,7 @@ export default function AddComment() {
         <label htmlFor="commenter_name">Name: </label>
         <input name="commenter_name" id="commenter_name" placeholder="Name" required />
         <label htmlFor="content">Comment: </label>
-        <input name="content" id="content" placeholder="Content" required />
-
+        <input name="content" id="content" placeholder="Comment" required />
         <button type="submit">Submit comment</button>
       </form>
     </div>
