@@ -1,14 +1,49 @@
-CREATE TABLE games (
-  id SERIAL PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  content TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+TABLES:
+
+-- Create 'categories' table
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE comments (
-  id SERIAL PRIMARY KEY,
-  post_id INTEGER REFERENCES posts(id),
-  author VARCHAR(255) NOT NULL,
-  content TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+-- Create 'games' table
+CREATE TABLE games (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    category_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
 );
+
+-- Create 'comments' table
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    game_id INT,
+    commenter_name VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (game_id) REFERENCES games(id)
+);
+
+CATEGORIES
+
+-- Insert categories into 'categories' table
+INSERT INTO categories (name) VALUES
+('Soulslike'),
+('RPG'),
+('Action-Adventure'),
+('Puzzle');
+
+SEED GAMES
+-- Insert games into 'games' table
+INSERT INTO games (title, content, category_id) VALUES
+('Elden Ring', 'Elden Ring is an expansive action RPG developed by FromSoftware in collaboration with George R.R. Martin. Set in a fantastical open world called the Lands Between, players embark on a journey to restore the shattered Elden Ring, encountering formidable foes, uncovering a rich lore, and mastering intricate combat mechanics along the way. With its sprawling landscapes, challenging gameplay, and deep narrative, Elden Ring offers an immersive adventure for players to explore and conquer.', 1),
+('Dark Souls 3', 'Dark Souls 3 is an intense action RPG developed by FromSoftware, renowned for its punishing difficulty and atmospheric world. Set in the decaying kingdom of Lothric, players navigate treacherous landscapes filled with grotesque creatures and deadly traps while unraveling a complex storyline. With its intricate combat system, deep lore, and breathtaking environments, Dark Souls 3 offers a challenging yet rewarding experience for players brave enough to explore its unforgiving depths.', 1),
+('The Witcher 3 - Wild Hunt', 'The Witcher 3: Wild Hunt is an epic action RPG developed by CD Projekt Red, immersing players in the rich and morally ambiguous world of Geralt of Rivia, a monster hunter known as a Witcher. Set in a sprawling open-world filled with political intrigue, dangerous creatures, and vibrant characters, players embark on a quest to find Geralts adopted daughter, Ciri, pursued by the otherworldly Wild Hunt. With its deep narrative, complex choices, and stunning visuals, The Witcher 3 offers an unforgettable journey through a dark and immersive fantasy world.', 2),
+('Baldurs Gate 3', 'Baldurs Gate 3 is a highly anticipated RPG developed by Larian Studios, continuing the iconic Baldurs Gate series. Set in the Dungeons & Dragons universe, players embark on an epic adventure in the city of Baldurs Gate and beyond, facing off against formidable foes and making critical decisions that shape the narrative. With its deep role-playing mechanics, engaging storytelling, and strategic turn-based combat, Baldurs Gate 3 offers an immersive and challenging experience for fans of the genre.', 2),
+('The Legend of Zelda - Twilight Princess', 'The Legend of Zelda: Twilight Princess is a beloved action-adventure game developed by Nintendo, immersing players in the twilight-ridden kingdom of Hyrule. Playing as the hero Link, players embark on a quest to save Hyrule from the encroaching darkness brought by the Twilight Realm. With its captivating storyline, inventive puzzles, and vast world to explore, Twilight Princess offers an unforgettable journey filled with memorable characters, epic battles, and a rich sense of adventure.', 3),
+('Lords of the Fallen', 'You as a Lamp Bearer found the mysterious lamp that gives its bearer the ability to breach two worlds. The world of Axiom which is the world of the living, and the world of the undead, Umbral. As a bearer of an unknown special ability of having multiple lives, you as a crusader will travel the land of Mornstead to cleanse and revitalize the Five Beacons of Sentinels to thwart Adyrs Resurrection. In this perilous journey, prepare to encounter monstrous and demonic beings beyond imagination that will fit in the Dark Fantasy theme or setting. The Crusader will not only need to have the courage to conquer these demonic beasts but also have the will to traverse burning cities, unearthly caves, nightmarish forests, intricate citadels, and more.', 1),
+('Lies of P', 'Lies of P takes the story of Pinocchio and flips it on its head, creating a world of horror fiction that we seldom see. Influenced by the Soulslike genre, Lies of P takes place in a challenging, dark world where sinister mechanical puppets inherit the city.', 1),
+('The Legend of Zelda - Majoras Mask', 'The Legend of Zelda: Majoras Mask is a critically acclaimed puzzle game developed by Nintendo. Set in the land of Termina, Link embarks on a time-sensitive quest to prevent the moon from crashing into the world in three days, resetting the cycle repeatedly. With its dark and eerie atmosphere, complex time-travel mechanics, and profound themes of loss and redemption, Majoras Mask offers a unique and emotionally resonant experience within the iconic Zelda franchise.', 4);
+
