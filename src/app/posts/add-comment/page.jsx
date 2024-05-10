@@ -19,13 +19,13 @@ export default function AddComment() {
   return (
 
     <div className="add-comment-container">
-      <h2>Add a comment...</h2>
+      <h1>C O M M E N T</h1>
       <form action={handleAddComment}>
         <label htmlFor="commenter_name">Name: </label>
         <input name="commenter_name" id="commenter_name" placeholder="Name" required />
         <label htmlFor="content">Comment: </label>
         <input name="content" id="content" placeholder="Comment" required />
-        <button type="submit">Submit comment</button>
+        <button type="submit">S U B M I T</button>
       </form>
     </div>
   );
