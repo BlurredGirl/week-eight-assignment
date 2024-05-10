@@ -6,18 +6,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <header>
-        <nav className="navbar">
-      <Link href="/">H O M E</Link>
-      <Link href ="/about">A B O U T</Link>
-      <Link href ="/posts">P O S T S</Link>
-      <Link href="/posts/1">P O S T // 1</Link>
-    </nav>
+          <nav className="navbar">
+            <Link href="/">H O M E</Link>
+            <Link href="/about">A B O U T</Link>
+            <Link href="/posts">G A M E S</Link>
+            <Link href="/posts/1">I N D I V I D U A L / G A M E</Link>
+          </nav>
         </header>
         {children}
         <footer>
           <h2>Week Eight Assignment</h2>
         </footer>
-        </body>
+      </body>
     </html>
   );
 }

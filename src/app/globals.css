@@ -99,3 +99,61 @@ img {
   height: 20%;
   width: 20%;
 }
+
+.game-list {
+  display: table;
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse; 
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); 
+  background-color: #f9ecf7; 
+}
+
+.game-item {
+  display: table-row;
+}
+
+.game-title,
+.game-content {
+  display: table-cell;
+  padding: 20px;
+  border: 1px solid #e049c2; 
+  text-align: center; 
+}
+
+.game-title {
+  font-weight: bold;
+  color: #000000; 
+}
+
+.game-item:nth-child(odd) {
+  background-color: #f7c4e5;
+}
+
+.ascending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 15px;  
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  cursor: pointer;
+  margin: 30px;
+  border: 1px solid #e049c2; 
+  font-style: italic;
+}
+
+.descending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 15px;  
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  cursor: pointer;
+  margin: 30px;
+  border: 1px solid #e049c2; 
+  font-style: italic;
+}

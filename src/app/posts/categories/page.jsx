@@ -1,27 +1,18 @@
-"use client"
-import { useEffect, useState } from 'react';
+// import Link from 'next/link';
+// import { sql } from '@vercel/postgres';
 
-export default function PostCategories() {
-  const [categories, setCategories] = useState([]);
+// export default async function PostCategories() {
+//     const categories = await sql`SELECT * FROM categories`;
 
-  useEffect(() => {
-    async function fetchCategories() {
-      const response = await fetch('/api/categories');
-      const data = await response.json();
-      setCategories(data);
-    }
 
-    fetchCategories();
-  }, []);
-
-  return (
-    <div>
-      <h1>P O S T  //  C A T E G O R I E S</h1>
-      <ul>
-        {categories.map((category) => (
-          <li key={category.id}>{category.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h1>P O S T  //  C A T E G O R I E S</h1>
+//       <ul>
+//         {games.map((category) => (
+//           <li key={category.id}>{category.name}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
