@@ -12,10 +12,6 @@ export default async function PostListPage({ searchParams }) {
   return (
     <div>
       <h1>G A M E S</h1>
-      <nav className="category-button">
-        <Link href="/posts/categories">C A T E G O R I E S</Link>
-      </nav>
-
       <Link className="ascending" href="/posts?sort=asc">
         Sort Ascending
       </Link>
