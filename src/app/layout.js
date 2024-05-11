@@ -9,9 +9,9 @@ export default function RootLayout({ children }) {
           <nav className="navbar">
             <Link href="/">H O M E</Link>
             <Link href="/about">A B O U T</Link>
-            <Link href="/posts">G A M E S</Link>
-            <Link href="/posts/add-comment">C O M M E N T</Link>
-            <Link href="/posts/1">I N D I V I D U A L / G A M E</Link>
+            <Link href="/games">G A M E S</Link>
+            <Link href="/games/add-comment">C O M M E N T</Link>
+            <Link href="/games/1">I N D I V I D U A L / G A M E</Link>
           </nav>
         </header>
         {children}

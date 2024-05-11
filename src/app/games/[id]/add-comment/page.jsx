@@ -2,18 +2,19 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export default function AddComment() {
+export default function AddComment({ params }) {
   async function handleAddComment(formData) {
     "use server";
 
-    const name = formData.get("name");
+    const name = formData.get("commenter_name");
     const content = formData.get("content");
 
-    await sql`INSERT INTO comments (commenter_name, content, game_id) values (${name}, ${content},${game_id})`;
+
+    const {rows} = await sql`INSERT INTO comments (commenter_name, content, game_id) values (${name}, ${content}, ${params.id}) RETURNING *`;
+    console.log (rows)
 
     revalidatePath("/");
-
-    redirect("/");
+    redirect (`/games/${params.id}`)
   }
 
   return (
