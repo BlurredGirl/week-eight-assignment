@@ -10,10 +10,11 @@ export default async function PostPage({ params }) {
 
   return (
     <div>
-      <h1>C O M M E N T S</h1>
+      <h1>G A M E</h1>
       <span className="game-title">{game[0].title}</span>
       <span className="game-content">{game[0].content}</span>
-      <Link href={`${game[0].id}/add-comment`}>Add a comment</Link>
+      <Link className="comment-button" href={`${game[0].id}/add-comment`}>Add a comment</Link>
+      <h2>C O M M E N T S</h2>
       <ul className="game-list">
         {comments.map((comment) => (
           <li key={comment.id} className="game-item">

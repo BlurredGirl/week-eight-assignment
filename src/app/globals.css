@@ -59,6 +59,14 @@ h1 {
   font-size: 35px;
 }
 
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 25px;
+}
+
 .category-button {
   display: flex;
   align-items: center;
@@ -198,4 +206,18 @@ img {
 
 .add-comment-container button:hover {
   background-color: #ff00a6;
+}
+
+.comment-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 15px;  
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  cursor: pointer;
+  margin: 40px;
+  border: 1px solid #e049c2; 
+  font-style: italic;
 }
