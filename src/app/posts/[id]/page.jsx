@@ -1,5 +1,7 @@
 export default async function SinglePostPage({ params }) {
-    console.log(params);
+
+    // const result = await fetch ({params.id});
+    // const games = await result.json();
 
 //     return (
 //       <div>
@@ -20,6 +22,7 @@ export default async function SinglePostPage({ params }) {
   
     return (
       <div>
+        {/* <h2>{game.id}</h2> */}
         <h2>{game.title}</h2>
         <p>{game.content}</p>
       </div>
